@@ -8,5 +8,5 @@ urlpatterns = [
     path("<str:month>", views.monthly_challenge, name="month-challenge"),
     # path converter (int)
     path("<int:month>", views.monthly_challenge_by_number),
-    path("", views.index)
+    path("", views.index, name="index")
 ]

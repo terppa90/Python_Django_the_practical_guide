@@ -1,0 +1,28 @@
+{% extends "base.html" %} {% load static %}
+<!--CSS-->
+{% block css_files %}
+<!--links-->
+<link rel="stylesheet" href="{% static "challenges/challenge.css" %}">
+<!--links-->
+<link rel="stylesheet" href="{% static "challenges/includes/header.css" %}">
+<!--END-->
+{% endblock %}
+
+<!--Block title start-->
+{% block page_title %} {{ month_name|title }} Challenge
+<!--Block title end-->
+{% endblock %}
+
+<!--Block content start-->
+{% block content %}
+<!--Header-->
+{% include "challenges/includes/header.html" %}
+
+<h1>{{ month_name|title }} Challenge</h1>
+{% if text is not None %}
+<h2>{{ text }}</h2>
+{% else %}
+<p class="fallback">There is no challenge for this month yet!</p>
+{% endif %}
+<!--Block end-->
+{% endblock %}
